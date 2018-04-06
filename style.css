@@ -37,3 +37,7 @@ body{
 	right:15px;
 }
 
+.sw-front{
+	z-index: 2;
+}
+
