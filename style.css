@@ -8,13 +8,17 @@ body{
 	color: white;
 }
 
-.sw-width{
+.sw-full-width{
 	width:100%;
 }
 
-.sw-80-width{
-	width:80%;
+.sw-90-width{
+	width:90%;
 
+}
+
+a:hover{
+	text-decoration: none;
 }
 
 .sw-left-padding{
