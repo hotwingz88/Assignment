@@ -11,10 +11,9 @@
 </head>
 <body>
 	<!-- Navbar  -->
-	<nav class=" row navbar navbar-dark
-	bg-primary fixed-top">
+	<nav class=" row navbar navbar-dark bg-primary fixed-top">
 		<!-- Left  Navbar -->
-		<div class="col-sm-4 d-sm-block">
+		<div class="col-sm-4 d-none d-md-block">
 			<a class="sw-color-white" href="website-list.html"><i class="fas fa-chevron-left"></i></a>
 			<a class="sw-color-white sw-left-padding" href="website-list.html"><b>Websites</b></a>
 			<a class="sw-color-white float-right" href="website-new.html"><i class="fas fa-plus"></i></a>
@@ -27,8 +26,7 @@
 	</nav>
 	<div class="row">
 		<!-- Left Website List -->
-		<div class="col-md-4 d-sm-block">
-		<div>
+		<div class="col-sm-4 d-none d-md-block">
 			<div class="container-fluid">
 	 			<ul class="list-group">
 					<li class="list-group-item">
@@ -51,7 +49,7 @@
 			</div>
 		</div>
 		<!-- Right Form -->
-		<div class="col-md-8">
+		<div class="col-sm-8">
 			<div class="container-fluid">
 				<form>
 					<div class="form-group">
@@ -61,8 +59,9 @@
 					<div class="form-group">
 						<label><b>Description</b></label>
 						<textarea rows="5" class="form-control" placeholder="Describe your website here">Hello and welcome to my website edit page</textarea>
-					</div><button class="btn  btn-danger">Cancel</button>
-					<button class="btn btn-success float-right">Submit</button>
+					</div>
+					<a href="website-list.html" class="btn  btn-danger">Delete</a>
+					<a href='website-list.html' class="btn btn-success float-right">Submit</a>
 				</form>
 			</div>
 		</div>
