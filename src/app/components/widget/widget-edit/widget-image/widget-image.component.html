@@ -1,10 +1,10 @@
 <nav class="navbar fixed-top navbar-light sw-bg-gray">
-		<a class="sw-color-black" href="widget-image.html" class="sw-black"><i class="fas fa-chevron-left"></i></a>
+		<a class="sw-color-black" routerLink="/user/:uid/website/:wid/page/:pid/widget/new" class="sw-black"><i class="fas fa-chevron-left"></i></a>
 		<div class="sw-90-width">
 			<a class="navbar-brand float-left"
-			href="widget-image.html"><b>Widget Image</b></a>
+			 routerLink="/user/:uid/website/:wid/page/:pid/widget/new"><b>Widget Image</b></a>
 		</div>
-		<a href="widget-list.html" class="sw-black float-right"><i class="fas fa-check"></i></a>
+		<a routerLink="/user/:uid/website/:wid/page/:pid/widget" class="sw-black float-right"><i class="fas fa-check"></i></a>
 	</nav>
 	<div class="container-fluid">
 		<form>
@@ -33,14 +33,14 @@
 			</div>
 			<br>
 			<div>
-				<a class="btn btn-primary btn-block" href="widget-list.html">Submit</a>
-				<a class="btn btn-danger btn-block" href="widget-list.html">Delete</a>
+				<a class="btn btn-primary btn-block" routerLink="/user/:uid/website/:wid/page/:pid/widget">Submit</a>
+				<a class="btn btn-danger btn-block" routerLink="/user/:uid/website/:wid/page/:pid/widget">Delete</a>
 			</div>
 		</form>
 	</div>
 	<!-- footer -->
 	<nav class="navbar navbar-dark sw-gray fixed-bottom">
 		<div class="sw-width">
-			<a href="../User/profile.html" class="sw-font-white float-right"><i class="fas fa-user"></i></a>
+			<a class="sw-font-white float-right" routerLink="/user/:uid"><i class="fas fa-user"></i></a>
 		</div>
 	</nav>

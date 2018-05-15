@@ -1,4 +1,18 @@
-<nav class="navbar navbar-dark bg-primary fixed-top">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="viewport" content="initial-scale=1.25, user-scalable=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css"
+	href="../style.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+<body>  
+	<!-- top nav -->
+	<nav class="navbar navbar-dark bg-primary fixed-top">
 	 <a class="navbar-brand" href="profile.html"><b>Profile</b></a>
 	 <a href="#" class="sw-color-white" ><i class="fas fa-check"></i></a>
 	</nav>
@@ -21,8 +35,8 @@
      			<label for="last-name"><strong>Last name</strong></label>
      			<input type="text" class="form-control" name="last-name">
      			<br>
-		   	<a class="btn btn-primary btn-block" routerLink="/user/:uid/website">Websites</a>
-			<a class="btn btn-danger btn-block" routerLink="/login">Logout</a>
+		   	<a class="btn btn-primary btn-block" href="../Website/website-list.html">Websites</a>
+			<a class="btn btn-danger btn-block" href="login.html">Logout</a>
 			</div>
 		</form>
 	</div>
@@ -32,3 +46,7 @@
 		<a class="sw-color-white float-right" href="profile.html"><i class="fas fa-user"></i></a>
 	</div>
 	</nav>
+</body>
+</html>
+
+	
