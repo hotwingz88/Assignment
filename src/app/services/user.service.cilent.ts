@@ -21,16 +21,16 @@ users: User[] = [
     return user;
   }
 
-  findUserById(userId: String) {
+  findUserById(userId: string) {
     for (let x = 0; x < this.users.length; x++) {
       if (this.users[x].username === userId) {  
         return this.users[x]; 
       }
     }
   }
-}
 
-  findUserByUsername(username: String) { 
+
+  findUserByUsername(username: string) { 
   //   for (let x = 0; x < this.users.length; x++) {
   //     if (this.users[x].username === username) {  
   //       return this.users[x]; 
@@ -65,7 +65,7 @@ users: User[] = [
  }
 
 
-  deleteUser(userId: String) {
+  deleteUser(userId: string) {
     var oldUser = this.findUserById(userId);
     var index = this.users.indexOf(oldUser);
     this.users.splice(index, 1);

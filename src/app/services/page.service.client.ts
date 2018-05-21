@@ -1,5 +1,5 @@
-
 import { Injectable } from '@angular/core';
+import { Page } from '../models/page.model.client';
 
 // injecting service into module
 @Injectable()
@@ -8,13 +8,13 @@ export class PageService {
 
   constructor() { }
   	
-	 pages = [
+	 pages: Page[] = [
 	  { _id: "321", name: "Post 1", websiteId: "456", description: "Lorem" },
 	  { _id: "432", name: "Post 2", websiteId: "456", description: "Lorem" },
 	  { _id: "543", name: "Post 3", websiteId: "456", description: "Lorem" }
 	]
 	//  adds the page parameter instance to the local pages array. The new page's websiteId is set to the websiteId parameter
-	createPage(websiteId : string, page : object){
+	createPage(websiteId : string, page : Page){
 		page._id = Math.floor(Math.random() * Math.floor(1000000)).toString();
 		page.websiteId = websiteId;
 		this.pages.push(page);
@@ -42,7 +42,7 @@ export class PageService {
 	}
 
 	//  updates the page in local pages array whose _id matches the pageId parameter
-	updatePage(pageId : string, page: any) {
+	updatePage(pageId : string, page: Page) {
 		let oldPage = this.findPageById(pageId);
 		const index = this.pages.indexOf(oldPage);
 		this.pages[index].name = page.name;

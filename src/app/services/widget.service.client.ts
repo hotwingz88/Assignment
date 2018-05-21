@@ -15,10 +15,10 @@ export class WidgetService {
   { _id: "567", widgetType: "HEADING", pageId: "321", size: 4, text: "Lorem ipsum"},
   { _id: "678", widgetType: "YOUTUBE", pageId: "321", width: "100%", url: "https://youtu.be/AM2Ivdi9c4E" },
   { _id: "789", widgetType: "HTML", pageId: "321", text: "<p>Lorem ipsum</p>"}
-  new Widget("789", "HEADING", "321", 2,)
+  
 ];
 
-}
+
 	// adds the widget parameter instance to the local widgets array. The new widget's pageId is set to the pageId parameter
 	createWidget(pageId: string, widget: Widget) {
 		widget._id = Math.floor(Math.random() * Math.floor(100000)).toString();
@@ -27,7 +27,7 @@ export class WidgetService {
 		return widget;
 	}
 	// retrieves the widgets in local widgets array whose pageId matches the parameter pageId 
-	findWidgetsByPageId(pageId: String){
+	findWidgetsByPageId(pageId: string){
 		var result = [];
 		for(var i=0;i<this.widgets.length;i++){
 			if(this.widgets[i].pageId === pageId){
@@ -37,7 +37,7 @@ export class WidgetService {
 		return result;
 	}
 	// retrieves the widget in local widgets array whose _id matches the widgetId parameter 
-	findWidgetById(widgetId: String) {
+	findWidgetById(widgetId: string) {
 		for(var i=0;i<this.widgets.length;i++){
 			if(this.widgets[i].pageId === widgetId){
 				return this.widgets[i];
@@ -55,9 +55,9 @@ export class WidgetService {
 		this.widgets[index].url = widget.url;
 	}
 	// removes the widget from local widgets array whose _id matches the widgetId parameter 
-	deleteWidget(widgetId: String){
+	deleteWidget(widgetId: string){
 		const oldWidget = this.findWidgetById(widgetId);
 		const index = this.widgets.indexOf(oldWidget);
-	}	this.widgets.splice(index,1);
+		this.widgets.splice(index,1);
+}	}	
 
-}
