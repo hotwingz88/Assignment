@@ -23,7 +23,7 @@ users: User[] = [
 
   findUserById(userId: string) {
     for (let x = 0; x < this.users.length; x++) {
-      if (this.users[x].username === userId) {  
+      if (this.users[x]._id === userId) {  
         return this.users[x]; 
       }
     }
