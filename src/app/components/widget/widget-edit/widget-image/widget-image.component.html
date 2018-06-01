@@ -1,40 +1,42 @@
 <nav class="navbar fixed-top navbar-light sw-bg-gray">
-		<a class="sw-color-black" routerLink="/user/:uid/website/:wid/page/:pid/widget/new" class="sw-black"><i class="fas fa-chevron-left"></i></a>
+		<a class="sw-color-black" routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/new" class="sw-black"><i class="fas fa-chevron-left"></i></a>
 		<div class="sw-90-width">
 			<a class="navbar-brand float-left"
-			 routerLink="/user/:uid/website/:wid/page/:pid/widget/new"><b>Widget Image</b></a>
+			 routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/new"><b>Widget Image</b></a>
 		</div>
-		<a routerLink="/user/:uid/website/:wid/page/:pid/widget" class="sw-black float-right"><i class="fas fa-check"></i></a>
+		<button [disabled]="f.invalid" type="submit" form="widgetForm" class=" btn sw-button-to-a sw-black float-right"><i class="fas fa-check"></i></button>
 	</nav>
 	<div class="container-fluid">
-		<form>
+		<form id="widgetForm" (ngSubmit)="update()" #f="ngForm">
 			<div class="form-group">
 				<label><b>Name</b></label>
-				<input class="form-control" type="text" name="widget-name" placeholder="Enter your widget name...">
+				<input class="form-control" type="text" name="name" ngModel="{{widget.name}}" #name="ngModel" placeholder="Enter your widget name...">
 			</div>
 			<div class="form-group">
 				<label><b>Text</b></label>
-				<input class="form-control" type="text" name="widget-text" placeholder="Enter your widget text...">
+				<input class="form-control" type="text" name="text" ngModel="{{widget.text}}" #text="ngModel" placeholder="Enter your widget text...">
 			</div>
 			<div class="form-group">
 				<label><b>URL</b></label>
-				<input class="form-control" type="text" name="URL" class="form-control" placeholder="https://www.image.com">
+				<input class="form-control" required ngModel="{{widget.url}}" #url="ngModel" type="text" name="url" class="form-control" placeholder="https://www.image.com">
 			</div>
+			<div class="alert alert-danger" *ngIf="url.invalid && url.touched">Url can't be empty!</div>
 			<div class="form-group">
 				<label><b>Width</b></label>
-				<input class="form-control" type="text" name="widget-width" class="form-control" placeholder="100%">
+				<input class="form-control" required ngModel="{{widget.width}}" #width="ngModel" type="text" name="width" class="form-control" placeholder="100%">
 			</div>
+			<div class="alert alert-danger" *ngIf="width.invalid && width.touched">Width can't be empty!</div>
 			<div class="form-group">
 				<label><b>Upload</b></label>
-				<input class="form-control" type="file" name="widget-upload" placeholder="100%">
+				<input class="form-control" type="file" name="upload" placeholder="100%">
 			</div>
 			<div>
 				<a class="btn btn-secondary btn-block" href="#">Upload Image</a>
 			</div>
 			<br>
 			<div>
-				<a class="btn btn-primary btn-block" routerLink="/user/:uid/website/:wid/page/:pid/widget">Submit</a>
-				<a class="btn btn-danger btn-block" routerLink="/user/:uid/website/:wid/page/:pid/widget">Delete</a>
+				<button class="btn btn-primary btn-block" routerLink="/user/:uid/website/:wid/page/:pid/widget">Submit</button>
+				<button class="btn btn-danger btn-block" type="button" (click)="remove()">Delete</button>
 			</div>
 		</form>
 	</div>

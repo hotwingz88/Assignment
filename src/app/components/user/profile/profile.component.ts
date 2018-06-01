@@ -26,19 +26,8 @@ export class ProfileComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit() {
-  // 	this.activatedRoute.params.subscribe(
-  // 		function info(params){
-  // 			this.uid = params['uid'];
-  // 			this.user = this.userService.findUserById(profile.uid);
-  // 			this.username = this.user.username;
-  // 			this.email = this.user.email;
-  // 			this.firstName = this.user.firstName;
-  // 			this.lastName = this.user.lastName;
-  //       console.log(profile.username)
-  // 		});	
-  // }.bind(this));
   this.activatedRoute.params.subscribe(
-  params =>  {
+    function info(params){
       this.uid = params['uid'];
       this.user = this.userService.findUserById(this.uid);
       this.username = this.user.username;
@@ -46,14 +35,13 @@ export class ProfileComponent implements OnInit {
       this.firstName = this.user.firstName;
       this.lastName = this.user.lastName;
       this.oldUsername = this.user.username;
-    })
+    }.bind(this));
 }
-
 update(){
-   this.username= this.profileForm.value.username;
-   this.email= this.profileForm.value.email;
-   this.firstName= this.profileForm.value.firstName;
-   this.lastName= this.profileForm.value.lastName;
+   this.username = this.profileForm.value.username;
+   this.email = this.profileForm.value.email;
+   this.firstName = this.profileForm.value.firstName;
+   this.lastName = this.profileForm.value.lastName;
 
    //check if the new username was taken or the username was not changed
    const aUser = this.userService.findUserByUsername(this.username);

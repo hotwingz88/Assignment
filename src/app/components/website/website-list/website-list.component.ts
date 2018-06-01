@@ -19,7 +19,7 @@ export class WebsiteListComponent implements OnInit {
   	this.activatedRoute.params.subscribe(params => {
   		this.uid = params['uid'];
   		this.websites = this.websiteService.findWebsitesByUser(this.uid);
-  		console.log(this.websites);
+  		
   	})
   }
 

@@ -1,14 +1,14 @@
 <nav class="navbar navbar-dark bg-primary fixed-top">
-	 <a class="navbar-brand" routerLink="user/:uid"><b>Profile</b></a>
-	 <button class="sw-button-to-a" type="submit" form="profileForm" [disabled]="f.invalid" ><i class="fas fa-check"></i></button>
+	 <a class="navbar-brand" routerLink="user/{{uid}}"><b>Profile</b></a>
+	 <button class="btn sw-color-white sw-button-to-a" type="submit" form="profileForm" [disabled]="f.invalid" ><i class="fas fa-check"></i></button>
 	</nav>
 	<div class="container-fluid">
 		<div *ngIf="usernameTaken" class="alert alert-danger">Username is taken, please try another one.</div>
 		<div *ngIf="submitSuccess" class="alert alert-success">Update successfully</div>
-		<form (ngSubmit)="update()" id="profileForm" #f="ngForm">
+		<form (ngSubmit)="update()" form="profileForm" #f="ngForm">
 			<div class="form-group">
-				<label for="username"><strong>Username</strong></label>
-				<input type="text" class="form-control" name="username" required ngModel={{user.username}} #username="ngModel" placeholder="example">
+				<label for="username"><b>Username</b></label>
+				<input class="form-control" type="text" name="username" required ngModel="{{user.username}}"#username="ngModel" placeholder="example">
 			</div>
 			<div class="form-group">
 				<label for="email"><strong>Email</strong></label>
@@ -18,12 +18,12 @@
 			<div class="form-group">
 				<label for="firstName"><strong>First name</strong></label>
 				<input type="text" class="form-control" name="firstName"
-				ngModel={{user.firstName}} #firstName="ngModel"> 
+				ngModel={{user.firstName}} #firstName="ngModel" placeholder="Alice"> 
             </div>
             <div class="form-group"> 
      			<label for="lastName"><strong>Last name</strong></label>
      			<input type="text" class="form-control" name="lastName"
-     			ngModel={{user.lastName}} #lastname="ngModel">
+     			ngModel={{user.lastName}} #lastname="ngModel" placeholder="Wang">
      			<br>
 		   	<a class="btn btn-primary btn-block" routerLink="/user/{{uid}}/website">Websites</a>
 			<a class="btn btn-danger btn-block" routerLink="/login">Logout</a>

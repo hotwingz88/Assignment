@@ -20,7 +20,7 @@ export class PageService {
 		this.pages.push(page);
 		return page;
 	}
-	// retrieves the pages in local pages array whose websiteId matches the parameter
+	// retrieves the pages in local pages array whose websiteId matches the parameter websiteId
 	findPageByWebsiteId(websiteId : string) {
 		let result = [];
 		for(let i =0; i < this.pages.length;i++){
