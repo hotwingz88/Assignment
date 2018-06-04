@@ -3,7 +3,7 @@ import { WidgetService } from "../../../services/widget.service.client"
 import { Widget } from "../../../models/widget.model.client"
 import { ActivatedRoute} from "@angular/router"
 import { DomSanitizer } from '@angular/platform-browser'
-import { }
+
 
 @Component({
   selector: 'app-widget-list',
@@ -25,7 +25,6 @@ export class WidgetListComponent implements OnInit {
   		this.wid = params['wid'];
   		this.pid = params['pid'];
   		this.widgets = this.widgetService.findWidgetsByPageId(this.pid);
-  		console.log(this.widgets);
   	})
   }
 

@@ -32,6 +32,7 @@ export class PageEditComponent implements OnInit {
   		this.page = this.pageService.findPageById(this.pid);
   		this.name = this.page.name;
   		this.description = this.page.description;
+      console.log(this.page);
   });
   }
 
