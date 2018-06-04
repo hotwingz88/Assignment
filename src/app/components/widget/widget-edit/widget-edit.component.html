@@ -1,11 +1,12 @@
-<div [ngSwitch]="widgetType">
+<div [ngSwitch]="widget.widgetType">
 	<!-- Heading -->
+
 	<div *ngSwitchCase="'HEADING'">
 		<app-widget-header></app-widget-header>
 	</div>
 	<!-- Image -->
 	<div *ngSwitchCase="'IMAGE'">
-		<h1>Hello</h1>
+		
 		<app-widget-image></app-widget-image>
 	</div>
 	<!-- Youtube -->

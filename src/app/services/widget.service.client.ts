@@ -39,7 +39,7 @@ export class WidgetService {
 	// retrieves the widget in local widgets array whose _id matches the widgetId parameter 
 	findWidgetById(widgetId: string) {
 		for(var i=0;i<this.widgets.length;i++){
-			if(this.widgets[i].pageId === widgetId){
+			if(this.widgets[i]._id === widgetId){
 				return this.widgets[i];
 			}
 		}
