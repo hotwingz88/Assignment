@@ -33,8 +33,6 @@ export class WidgetListComponent implements OnInit {
  	const parsedUrl = url.split('/');
  	// transfer video url into embed video url
  	embedUrl += parsedUrl[parsedUrl.length -1];
- 	
-
  	// telling browser this src is safe
  	return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
  }

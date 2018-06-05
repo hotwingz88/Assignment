@@ -18,11 +18,10 @@ export class WidgetHeaderComponent implements OnInit {
   wid: string;
   pid: string;
   wgid: string;
-  widget: Widget;
   name: string;
   text: string;
   size: number;
-
+  widget: Widget;
 
   constructor(private widgetService: WidgetService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
