@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { WebsiteService } from '../../../services/website.service.cilent'
+import { WebsiteService } from '../../../services/website.service.client'
 import { Website } from '../../../models/website.model.client'
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';

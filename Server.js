@@ -31,6 +31,30 @@ app.set('port', port);
 // Create HTTP server
 const server = http.createServer(app);
 
+require("./server/app")(app);
+
+app.get('/hello', hello);
+
+function hello(req, res) {
+	res.send("Hello from server")
+}
+
+app.get("/api/user", findUsers);
+
+var users = [
+{_id: "123", username: "alice", password: "alice", firstName: "Alice", lastName: "Wonder", email: "alice@gmail.com"},
+	{_id: "234", username: "bob", password: "bob", firstName: "Bob", lastName: "Marley", email: "bob@whatever.com"},
+	{_id: "345", username: "charly", password: "charly", firstName: "Charly", lastName: "Garcia", email: "charly@hotmail.com"},
+	{_id: "456", username: "shiyu", password: "shiyu", firstName: "Shiyu", lastName: "Wang", email: "swang@ulem.org"}
+	];
+
+
+
+function findUsers(req, res){
+	res.send(users);
+}
+
+
 // For Build: Catch all other routes and return the index file -- BUILDING
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));

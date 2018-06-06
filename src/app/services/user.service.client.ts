@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model.client';
+import { map } from "rxjs/operators";
+import {Http, Response} from '@angular/http';
+import { environment } from '../../environments/environment'
 
 // injecting service into module
 @Injectable()
 
 export class UserService {
 
-  constructor() { }
+  baseUrl = environment.baseUrl;
+
+  constructor(private http: Http) { }
 
 users: User[] = [
 	{_id: "123", username: "alice", password: "alice", firstName: "Alice", lastName: "Wonder", email: "alice@gmail.com"},
@@ -43,11 +48,12 @@ users: User[] = [
    }
 
   findUserByCredentials(username: string, password: string) { 
-     for (let x = 0; x < this.users.length; x++) {
-      if (this.users[x].username === username && this.users[x].password === password) {  
-        return this.users[x]; 
-      }
-    }
+    const url = 'http://localhost:3100/api/user?username='+username + '&password=' + password;
+    return this.http.get(url).pipe(map(
+        (response: Response) => {
+          return response.json();
+        }
+      ))
   }
 
 
