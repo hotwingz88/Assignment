@@ -23,7 +23,6 @@ export class WebsiteListComponent implements OnInit {
           this.websites = websites;
         }
        );
-  		
   	});
   }
 
