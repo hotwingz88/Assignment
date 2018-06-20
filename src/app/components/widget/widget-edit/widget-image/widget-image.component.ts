@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { WidgetService } from "../../../../services/widget.service.client"
 import { Widget } from "../../../../models/widget.model.client"
 import { NgForm } from "@angular/forms"
-
 @Component({
   selector: 'app-widget-image',
   templateUrl: './widget-image.component.html',

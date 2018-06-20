@@ -29,6 +29,7 @@ import { WidgetService } from './services/widget.service.client';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { WidgetService } from './services/widget.service.client';
     WidgetEditComponent,
     WidgetHeaderComponent,
     WidgetImageComponent,
-    WidgetYoutubeComponent
+    WidgetYoutubeComponent,
+   
   ],
   imports: [
     BrowserModule,

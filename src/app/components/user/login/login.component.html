@@ -1,19 +1,46 @@
 <div class="container-fluid">
+		
 		<h1>Login</h1>
-		<div *ngIf="errorFlag" class=" alert alert-danger">Invalid username or password</div>
+		
+
+		<div *ngIf="errorFlag" class="alert alert-danger">Invalid username or password</div>
+		
+
+
 		<form (ngSubmit)="login()" #f="ngForm">
+
+
 			<div class="form-group">
 				<input class="form-control" type="text" 
 				name="username" placeholder="username" required ngModel #username = "ngModel">
 			</div>
+
+
+
 			<span  class="help-block" *ngIf="username.invalid && username.touched">Please enter username!</span>
+
+
+
 			<div class="form-group">
 				<input class="form-control" type="password" 
 				name="password" placeholder="password" required ngModel #password="ngModel"
 				>
 			</div>
+
+
 			<span class="alert" *ngIf="password.invalid && password.touched">Please enter password!</span>
-			<button class="btn btn-primary btn-block" [disabled]="f.invalid" type="submit">Login</button>
+
+
+			<button class="btn btn-primary btn-block" [disabled]="f.invalid" type="Submit">Login</button>
+
+
 			<button class="btn btn-success btn-block" routerLink="/register">Register</button>
+
+			
 		</form>
+
+
+
+
+
 </div>	  
