@@ -36,14 +36,13 @@ module.exports = function(app){
 	function findUser(req, res){
 		const username = req.query['username'];
 		const password = req.query['password'];
-		
+    
 		// find user by credentials
 		if(username && password) {
 			var user;
 			for (let x = 0; x < users.length; x++)  {
       			if (users[x].username === username && users[x].password === password) {  
         			user = users[x]
-        			
       		}	}
       		res.json(user);
       		return;

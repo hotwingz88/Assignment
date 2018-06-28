@@ -63,7 +63,7 @@ export class ProfileComponent implements OnInit {
        //check if the new username was taken or the username was not changed
        this.userService.findUserByUsername(this.username).subscribe(
            (user:User) => {
-             console.log(user);
+             // console.log(user);
               this.aUser = user;
               if(this.aUser && this.oldUsername !== this.username){
                  this.usernameTaken = true;

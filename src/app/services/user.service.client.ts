@@ -52,14 +52,14 @@ export class UserService {
   const url = this.baseUrl + '/api/user?username=' + username;
    return this.http.get(url).pipe(map(
      (response: Response) => {
-       console.log(response.json());
+       // console.log(response.json());
        return response.json();
      }
    ));
    }
 
   findUserByCredentials(username: string, password: string) { 
-    const url = 'http://localhost:3100/api/user?username='+username + '&password=' + password;
+    const url = this.baseUrl + '/api/user?username='+username + '&password=' + password;
     return this.http.get(url).pipe(map(
         (response: Response) => {
           return response.json();
