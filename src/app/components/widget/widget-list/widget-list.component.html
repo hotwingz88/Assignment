@@ -16,7 +16,6 @@
         </div> 
         <!-- content of each widget -->
         <div [ngSwitch]="widget.widgetType">
-            <!-- HEADING -->
             <div *ngSwitchCase="'HEADING'">
                 <div [ngSwitch]="widget.size">
                     <div *ngSwitchCase=1>
@@ -47,7 +46,7 @@
             <!-- YOUTUBE -->
             <div *ngSwitchCase="'YOUTUBE'">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe [src]="this.getYoutubeUrl(widget.url)" [style.width]="widget.width" frameborder="0"
+                    <iframe  [src]="this.getYoutubeUrl(widget.url)" [style.width]="widget.width" frameborder="0"
                     allowfullscreen>
                    </iframe>
                 </div>

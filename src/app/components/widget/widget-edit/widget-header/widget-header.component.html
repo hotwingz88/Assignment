@@ -5,14 +5,14 @@
     </a>
     <div class="sw-90-width">
         <a class="navbar-brand float-left"routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{wgid}}">
-            <b>Widget Edit</b>
+            <b>Widget Header</b>
         </a>
    </div>
     <button [disabled]="f.invalid" type="submit" form="widgetForm" class="btn sw-button-to-a sw-color-black float-right" >
         <i class="fas fa-check"></i>
     </button>
 </nav>
- <!-- form -->
+ <!-- Form -->
 <div class="container-fluid">
     <form id="widgetForm" (ngSubmit)="update()" #f="ngForm">
         <div class="form-group">

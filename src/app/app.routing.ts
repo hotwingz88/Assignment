@@ -15,6 +15,8 @@ import { WidgetListComponent } from './components/widget/widget-list/widget-list
 import { WidgetHeaderComponent } from './components/widget/widget-edit/widget-header/widget-header.component';
 import { WidgetImageComponent } from './components/widget/widget-edit/widget-image/widget-image.component';
 import { WidgetYoutubeComponent } from './components/widget/widget-edit/widget-youtube/widget-youtube.component';
+import { FlickrImageSearchComponent } from './components/widget/widget-edit/widget-image/flickr-image-search/flickr-image-search.component';
+
 // Import all other components here
 
 const APP_ROUTES : Routes = [
@@ -31,6 +33,7 @@ const APP_ROUTES : Routes = [
   { path : 'user/:uid/website/:wid/page/:pid/widget' , component:  WidgetListComponent},
   { path : 'user/:uid/website/:wid/page/:pid/widget/new' , component:  WidgetChooserComponent},		
   { path : 'user/:uid/website/:wid/page/:pid/widget/:wgid' , component:  	WidgetEditComponent},
+  { path : 'user/:uid/website/:wid/page/:pid/widget/:wgid/flickr', component: FlickrImageSearchComponent}
 ];
 
 // Export the routes as module providers

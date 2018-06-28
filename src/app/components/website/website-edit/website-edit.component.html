@@ -2,7 +2,7 @@
 	<nav class=" row navbar navbar-dark bg-primary fixed-top">
 		<!-- Left  Navbar -->
 		<div class="col-md-4 d-none d-md-block">
-			<a class="sw-color-white" routerLink="/user/{{uid}}/website/{{wid}}"><i class="fas fa-chevron-left"></i></a>
+			<a class="sw-color-white" routerLink="/user/{{uid}}/website"><i class="fas fa-chevron-left"></i></a>
 			<a class="sw-color-white sw-left-padding" routerLink="/user/{{uid}}/website/{{wid}}"><b>Websites</b></a>
 			<a class="sw-color-white float-right" routerLink="/user/{{uid}}/website/new"><i class="fas fa-plus"></i></a>
 		</div>
@@ -46,6 +46,6 @@
 	</div>
 	<footer class="navbar fixed-bottom  navbar-dark bg-primary">
 	<div class="sw-full-width">
-	     <a class="navbar-brand float-right" routerLink="/user/:uid/123"><i class="fas fa-user"></i></a>
+	     <a class="navbar-brand float-right" routerLink="/user/{{uid}}/123"><i class="fas fa-user"></i></a>
 	</div>
 </footer>

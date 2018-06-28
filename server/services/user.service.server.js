@@ -9,14 +9,15 @@ module.exports = function(app){
 	app.get('/api/user', findUser);
 	app.get('/api/user/:uid', findUserById);
 	app.post("/api/user", createUser);
-	app.put('api/user/:uid', updateUser);
+	app.put('/api/user/:uid', updateUser);
 	app.delete('/api/user/:uid', deleteUser);
 
 
 	function selectUserbyId(uid){
 		for (let x = 0; x < users.length; x++)  {
       		if (users[x]._id === uid) {  
-        	}	return users[x]; 
+            return users[x];
+        	}	 
       	}
 	}
 
@@ -52,7 +53,11 @@ module.exports = function(app){
       		var user = users.find(function(user){
       			return user.username === username;
       		})
-      		res.json(user);
+          if (user) {
+      		  res.json(user);
+          } else {
+            res.json(null);
+          }
       		return;
       	}
       	res.json(users);

@@ -25,7 +25,6 @@ app.delete("/api/website/:wid", deleteWebsite)
 		res.json(website);
 	}
 	function findAllWebsitesForUser(req, res) {
-		console.log("hello from website");
 		var uid = req.params['uid'];
 		var result = [];
 		for (let i = 0;i<websites.length;i++){
