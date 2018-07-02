@@ -57,6 +57,7 @@ import {FlickrService} from './services/flickr.service.client'
     Routing,
     FormsModule,
     HttpModule
+    
 
   ],
   providers: [UserService, WebsiteService, PageService, WidgetService, FlickrService],

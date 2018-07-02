@@ -1,5 +1,5 @@
 export class Widget {
-	_id: string;
+	_id?: string;
 	widgetType: string;
 	pageId: string;
 	name?: string;
@@ -11,6 +11,6 @@ export class Widget {
 	constructor(_id, widgetType, pageId) {
 		this._id = _id;
 		this.widgetType = widgetType;
-		this. pageId=  pageId;
-		
-}   }    
+		this.pageId = pageId;
+	}
+}
