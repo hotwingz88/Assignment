@@ -39,6 +39,7 @@ export class WidgetService {
 		const url = this.baseUrl + '/api/page/'+ pageId +'/widget'
 		return this.http.get(url).pipe(map(
 			(response: Response) => {
+				// console.log(response.json())
 				return response.json();
 			}
 		));

@@ -22,7 +22,6 @@ export class WidgetHeaderComponent implements OnInit {
   text: string;
   size: number;
   widget: Widget= {
-    _id: '',
     widgetType: '',
     pageId: ''
   };
