@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark bg-primary fixed-top">
-	 <a class="navbar-brand" routerLink="/user/{{uid}}"><b>Profile</b></a>
+	 <a class="navbar-brand" routerLink="/user"><b>Profile</b></a>
 	 <button class="btn sw-color-white sw-button-to-a" type="submit" form="profileForm" [disabled]="f.invalid"><i class="fas fa-check"></i></button>
 	</nav>
 	<div class="container-fluid">
@@ -26,7 +26,7 @@
      			ngModel={{user.lastName}} #lastname="ngModel" placeholder="Wang">
      			<br>
 		   	<a class="btn btn-primary btn-block" routerLink="/user/{{uid}}/website">Websites</a>
-			<a class="btn btn-danger btn-block" routerLink="/login">Logout</a>
+			<a (click)="logout()" class="btn btn-danger btn-block" >Logout</a>
 			</div>
 		</form>
 	</div>

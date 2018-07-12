@@ -28,8 +28,8 @@ import { WebsiteService } from './services/website.service.client';
 import { PageService } from './services/page.service.client';
 import { WidgetService } from './services/widget.service.client';
 import {FlickrService} from './services/flickr.service.client'
-
-
+import {SharedService} from './services/shared.service.client'
+import {AuthGuard} from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,15 @@ import {FlickrService} from './services/flickr.service.client'
     
 
   ],
-  providers: [UserService, WebsiteService, PageService, WidgetService, FlickrService],
+  providers: [
+    UserService, 
+    WebsiteService, 
+    PageService, 
+    WidgetService, 
+    FlickrService,
+    SharedService,
+    AuthGuard
+ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
