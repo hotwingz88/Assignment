@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http';
+import { QuillEditorModule } from 'ngx-quill-editor';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/user/login/login.component';
@@ -30,6 +31,9 @@ import { WidgetService } from './services/widget.service.client';
 import {FlickrService} from './services/flickr.service.client'
 import {SharedService} from './services/shared.service.client'
 import {AuthGuard} from './services/auth-guard.service';
+import { WidgetHtmlComponent } from './components/widget/widget-edit/widget-html/widget-html.component';
+import { WidgetTextComponent } from './widget-text/widget-text.component'
+
 
 @NgModule({
   declarations: [
@@ -50,15 +54,17 @@ import {AuthGuard} from './services/auth-guard.service';
     WidgetImageComponent,
     WidgetYoutubeComponent,
     FlickrImageSearchComponent,
+    WidgetHtmlComponent,
+    WidgetTextComponent
+
    
   ],
   imports: [
     BrowserModule,
     Routing,
     FormsModule,
-    HttpModule
-    
-
+    HttpModule,
+    QuillEditorModule
   ],
   providers: [
     UserService, 

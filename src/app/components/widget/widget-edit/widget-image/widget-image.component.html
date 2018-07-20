@@ -23,8 +23,9 @@
 			<div class="alert alert-danger" *ngIf="url.invalid && url.touched">Url can't be empty!</div>
 			<div class="form-group">
 				<label><b>Width</b></label>
-				<input class="form-control" required ngModel="{{widget.width}}" #width="ngModel" type="text" name="width" class="form-control" placeholder="100%">
+				<input class="form-control" required ngModel="{{widget.width}}" #width="ngModel" min="1" max="100%" value="50"  type="range" name="width" class="form-control" placeholder="100%">
 			</div>
+			<div>{{widget.width}}</div>
 			<div class="alert alert-danger" *ngIf="width.invalid && width.touched">Width can't be empty!</div>
 			<div class="form-group">			
 <form ngNoForm action="{{baseUrl}}/api/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{wgid}}/upload" method="post" enctype="multipart/form-data">

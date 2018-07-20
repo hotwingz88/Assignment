@@ -12,34 +12,25 @@
         <i class="fas fa-check"></i>
     </button>
 </nav>
- <!-- Form -->
+
+<!-- form -->
 <div class="container-fluid">
     <form id="widgetForm" (ngSubmit)="update()" #f="ngForm">
         <div class="form-group">
             <label><b>Name</b></label>
             <input class="form-control" type="text" name="name" ngModel="{{widget.name}}" #name="ngModel" placeholder="Enter your widget name...">
         </div>
+
         <div class="form-group">
             <label><b>Text</b></label>
-            <input class="form-control" type="text" name="text" ngModel="{{widget.text}}" required #text="ngModel" placeholder="Enter your widget text...">
+            <quill-editor class="form-control" type="text" name="text" ngModel="{{widget.text}}" #text="ngModel" placeholder="Enter your widget text..."></quill-editor>
         </div>
-        <div class="alert alert-danger" *ngIf="text.invalid && text.touched">Text can't be empty!</div>
-        <div class="form-group">
-            <label><b>Size</b></label>
-            <select class="form-control" type="number" name="size" ngModel="{{widget.size}}" required #size="ngModel" placeholder="Enter your widget text...">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-            </select>
-        </div>
-        <div class="alert alert-danger" *ngIf="size.invalid && size.touched">Size can't be empty!</div>
         <button [disabled]="f.invalid"class="btn btn-primary btn-block" type="submit">Submit</button>
         <button type="button" class="btn btn-danger btn-block" (click)="remove()">Delete</button>
     </form>
 </div>
+
+
 <!-- footer -->
 <footer class="navbar fixed-bottom  navbar-light sw-bg-grey">
     <div class="sw-full-width">

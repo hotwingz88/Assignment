@@ -45,13 +45,28 @@
             </div>
             <!-- YOUTUBE -->
             <div *ngSwitchCase="'YOUTUBE'">
-                <div class="embed-responsive embed-responsive-16by9">
+                <div class="embed-responsive embed-responsive-16by9 
+                loading-iframe">
                     <iframe  [src]="this.getYoutubeUrl(widget.url)" [style.width]="widget.width" frameborder="0"
                     allowfullscreen>
                    </iframe>
                 </div>
             </div>
+            <!-- HTML -->
+            <div *ngSwitchCase="'HTML'">
+                <div [innerHTML]="parse(widget.text)">
         </div>
+        <!-- TEXT Input -->
+        <div *ngSwitchCase="'TEXT'">
+            <div *ngIf='widget.formatted'>
+                <quill-editor [(ngModel)]="widget.text"></quill-editor>
+            </div>
+            <div *ngIf="!widget.formatted && widget.rows===1">
+                  <input type="text" name="text" placeholder="{{widget.placeholder}}" value="{{widget.text}}" class="form-control">
+            </div>
+            <div *ngIf="!widget.formatted && widget.rows===1">
+                <textarea placeholder='{{widget.placeholder}}' rows="{{widget.rows}}" class="form-control">{{widget.text}}</textarea>
+            </div>
 <!--    <div class="sw-absolute-right">
 <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{widget._id}}"><i class="fas fa-cog"></i></a>
 <a href="#"><i class="fas fa-bars"></i></a>

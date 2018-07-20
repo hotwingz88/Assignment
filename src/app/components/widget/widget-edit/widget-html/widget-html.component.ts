@@ -5,30 +5,28 @@ import { Widget } from "../../../../models/widget.model.client"
 import { NgForm } from "@angular/forms"
 
 @Component({
-  selector: 'app-widget-header',
-  templateUrl: './widget-header.component.html',
-  styleUrls: ['./widget-header.component.css']
+  selector: 'app-widget-html',
+  templateUrl: './widget-html.component.html',
+  styleUrls: ['./widget-html.component.css']
 })
-export class WidgetHeaderComponent implements OnInit {
+export class WidgetHtmlComponent implements OnInit {
 
- @ViewChild('f') widgetForm: NgForm;
+
+  constructor(private widgetService: WidgetService, private activatedRoute: ActivatedRoute, private router: Router) { }
+
+@ViewChild('f') widgetForm: NgForm;
 
 
   uid: string;
   wid: string;
   pid: string;
   wgid: string;
-  name: string;
-  text: string;
-  size: number;
   widget: Widget= {
     widgetType: '',
     pageId: ''
   };
-
-  constructor(private widgetService: WidgetService, private activatedRoute: ActivatedRoute, private router: Router) { }
-
-
+ name: string;
+ text: string;
 
   ngOnInit() {
   	this.activatedRoute.params.subscribe(params=>{
@@ -44,7 +42,7 @@ export class WidgetHeaderComponent implements OnInit {
   	});
   }
 
-  update(){
+   update(){
   	this.name = this.widgetForm.value.name;
   	this.text = this.widgetForm.value.text;
 
@@ -62,10 +60,8 @@ export class WidgetHeaderComponent implements OnInit {
         }
       );
   	
-  	
   }
-
-  remove(){
+ remove(){
   this.widgetService.deleteWidget(this.wgid).subscribe(
       (widgets: Widget[]) => {
          this.router.navigate(['user', this.uid, 'website', this.wid, 'page', this.pid, 'widget']);

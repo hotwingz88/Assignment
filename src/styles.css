@@ -52,3 +52,43 @@ a:hover{
 .sw-front{
 	z-index: 5;
 }
+
+/*.animate-bottom {
+	position: relative;
+	animation: animatebottom 0.9s;
+}
+
+@keyframes animatebottom {
+	from{left:-300px; opacity: 0;}
+	to{left:0; opacity: 1;}
+}*/
+
+/*.animate-zoom{
+	animation: animatezoom 0.4s;
+}
+
+@keyframes animatezoom{
+	from{transform: scale(0.4); }
+	to{transform: scale(0.3);}
+}*/
+
+.loading-iframe{
+	background: url(https://loading.io/spinners/gears/lg.dual-gear-loading-icon.gif) center center no-repeat;
+}
+
+.loader {
+	border: 18px solid #232830;
+	border-top: 18px solid #f2f5f9;
+	border-bottom: 18px solid #f2f5f9;
+	border-right: 18px solid black;
+	border-left: 18px solid grey;
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% {transform: rotate(360deg);}
+}
